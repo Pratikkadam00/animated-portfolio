@@ -30,7 +30,7 @@ function App() {
   return (
     <Router>
       <div className="w-full h-screen overflow-hidden">
-        <Navbar />
+        {/* <Navbar /> */}
         <AnimatedRoutes />
       </div>
     </Router>
