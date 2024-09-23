@@ -2,25 +2,37 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <ul className="flex justify-center space-x-8 py-4 text-dark">
+    <nav className="absolute p-2">
+      <ul className="flex flex-col space-y-6 text-[rgb(61,82,161)]">
         <li>
-          <Link to="/" className="hover:text-gray-500">
+          <Link
+            to="/"
+            className="px-6 py-3 text-lg font-semibold hover:bg-[rgb(134,151,195)] hover:text-white transition duration-300 ease-in-out rounded-xl shadow-lg"
+          >
             Home
           </Link>
         </li>
         <li>
-          <Link to="/experience" className="hover:text-gray-500">
+          <Link
+            to="/experience"
+            className="px-6 py-3 text-lg font-semibold hover:bg-[rgb(134,151,195)] hover:text-white transition duration-300 ease-in-out rounded-xl shadow-lg"
+          >
             Experience
           </Link>
         </li>
         <li>
-          <Link to="/skills" className="hover:text-gray-500">
+          <Link
+            to="/skills"
+            className="px-6 py-3 text-lg font-semibold hover:bg-[rgb(134,151,195)] hover:text-white transition duration-300 ease-in-out rounded-xl shadow-lg"
+          >
             Skills
           </Link>
         </li>
         <li>
-          <Link to="/projects" className="hover:text-gray-500">
+          <Link
+            to="/projects"
+            className="px-6 py-3 text-lg font-semibold hover:bg-[rgb(134,151,195)] hover:text-white transition duration-300 ease-in-out rounded-xl shadow-lg"
+          >
             Projects
           </Link>
         </li>

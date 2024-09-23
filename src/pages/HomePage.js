@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Image1 from "../assets/Image1.jpg"; // Replace with your PNG path
+import Navbar from "../components/Navbar";
 
 const nameVariants = {
   hidden: { y: "100%", opacity: 0 },
@@ -9,7 +10,7 @@ const nameVariants = {
     opacity: 1,
     transition: {
       duration: 0.5,
-      delay: i * 0.2, // Delay each letter
+      delay: i * 0.1, // Delay each letter
       ease: "easeOut",
     },
   }),
@@ -21,8 +22,13 @@ const HomePage = () => {
   return (
     <Section bgColor="bg-light-green">
       {/* Card Container */}
-      <div className="w-screen h-screen bg-[rgb(1,98,105)] p-8 flex justify-center items-center">
-        <div className="relative w-[90%] h-[90%] bg-[rgb(174,221,229)] shadow-2xl rounded-lg flex flex-col justify-center items-center p-8">
+      <div className="w-screen h-screen bg-[rgb(55,64,95)] p-8 flex justify-center items-center">
+        <div className="relative w-[90%] h-[90%] bg-gradient-to-r from-[rgb(232,214,255)] via-[rgb(217,221,232)] to-[rgb(233,237,248)] shadow-2xl rounded-lg flex flex-col justify-center items-center p-8">
+          {/* Navbar inside the card */}
+          <div className="absolute top-40 w-full">
+            <Navbar />
+          </div>
+
           {/* Image Section */}
           <motion.div
             className="absolute top-[-50px] w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-white overflow-hidden shadow-xl z-20"
