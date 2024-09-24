@@ -19,7 +19,7 @@ const Section = ({ children, bgColor }) => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       transition={{ duration: 0.5 }}
-      className={`h-screen w-full ${bgColor} flex justify-center items-center`}
+      className={`min-h-screen w-full ${bgColor} flex justify-center items-center`}
     >
       {children}
     </motion.div>

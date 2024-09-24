@@ -29,8 +29,7 @@ function AnimatedRoutes() {
 function App() {
   return (
     <Router>
-      <div className="w-full h-screen overflow-hidden">
-        {/* <Navbar /> */}
+      <div className="w-full min-h-screen overflow-hidden">
         <AnimatedRoutes />
       </div>
     </Router>

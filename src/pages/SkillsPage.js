@@ -1,10 +1,33 @@
 import Section from "../components/Section";
 
 const SkillsPage = () => {
+  const skills = [
+    "React",
+    "SQL",
+    "REST API",
+    "AWS",
+    "Node",
+    "MongoDB",
+    "Docker",
+    "TailwindCSS",
+    "JavaScript",
+  ];
+
   return (
     <Section bgColor="bg-gradient-to-r from-green-400 via-yellow-500 to-red-500">
-      <h1 className="text-5xl text-white">My Skills</h1>
-      <p className="text-white mt-4">List all your skills here...</p>
+      <div className="text-center px-4 md:px-8">
+        <h1 className="text-3xl md:text-5xl text-white mb-8">My Skills</h1>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {skills.map((skill, index) => (
+            <div
+              key={index}
+              className="bg-white text-gray-800 py-4 px-6 rounded-xl shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out"
+            >
+              {skill}
+            </div>
+          ))}
+        </div>
+      </div>
     </Section>
   );
 };
