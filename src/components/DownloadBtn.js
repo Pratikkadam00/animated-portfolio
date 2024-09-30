@@ -3,7 +3,7 @@ import { motion } from "framer-motion"; // Ensure you have framer-motion importe
 const DownloadButton = () => {
   return (
     <motion.button
-      className="bg-[rgb(255,138,255)] text-black rounded-lg px-6 py-3 font-bold shadow-lg hover:bg-[rgb(252,34,252)]"
+      className="bg-[rgb(46,46,46)] text-white rounded-2xl px-6 py-3 font-bold shadow-2xl hover:bg-[rgb(8,7,8)]"
       whileHover={{ scale: 1.1 }} 
       whileTap={{ scale: 0.9 }} 
       transition={{ type: "spring", stiffness: 200, damping: 10 }} 

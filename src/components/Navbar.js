@@ -106,7 +106,7 @@ const Navbar = () => {
   }, [startX, open]);
 
   return (
-    <div className="absolute left-0 top-0 bottom-0 flex items-center w-fit md:px-10">
+    <div className="absolute left-0 top-0 bottom-0 flex items-center w-fit md:px-10 z-50">
       {/* Hamburger button for mobile */}
       <div className="absolute top-5 left-5 md:hidden">
         <div

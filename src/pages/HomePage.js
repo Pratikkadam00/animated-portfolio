@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Image1 from "../assets/Image1.jpg";
-import Navbar from "../components/Navbar";
+import DownloadButton from "../components/DownloadBtn";
 
 const nameVariants = {
   hidden: { y: "100%", opacity: 0 },
@@ -68,8 +68,8 @@ const HomePage = () => {
             >
               MERN Stack Developer
             </motion.p>
-
-            <div className="flex justify-center space-x-4 mt-8">
+            <div className="flex justify-center space-x-3 mt-5 py-3">
+            <DownloadButton />
               <motion.a
                 href="https://github.com/yourusername"
                 target="_blank"
