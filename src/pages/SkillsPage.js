@@ -3,15 +3,14 @@ import { motion } from "framer-motion";
 
 const SkillsPage = () => {
   const skills = [
+    "JavaScript",
     "React",
-    "SQL",
-    "REST API",
-    "AWS",
     "Node",
     "MongoDB",
+    "AWS",
     "Docker",
     "TailwindCSS",
-    "JavaScript",
+    "Rest API"
   ];
 
   return (
