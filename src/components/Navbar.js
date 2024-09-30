@@ -2,6 +2,74 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useWidthResize from "../hooks/useWidthResize";
 
+// SVG icons for menu items
+const icons = {
+  home: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6 mr-2"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M3 12l2-2m0 0l7-7 7 7m-9 8V9m4 4v5h5V10.414a1 1 0 00-.293-.707l-7-7a1 1 0 00-1.414 0l-7 7A1 1 0 003 10.414V19a1 1 0 001 1h5z"
+      />
+    </svg>
+  ),
+  experience: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6 mr-2"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M8 12h.01M12 12h.01M16 12h.01M9 16h6m-7 4h8a2 2 0 002-2V7a2 2 0 00-2-2H8a2 2 0 00-2 2v11a2 2 0 002 2z"
+      />
+    </svg>
+  ),
+  skills: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6 mr-2"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9.75 3a6 6 0 000 12h4.5a6 6 0 000-12h-4.5zm-6 18h16.5a1.5 1.5 0 001.5-1.5v-3a1.5 1.5 0 00-1.5-1.5h-16.5A1.5 1.5 0 002.25 16.5v3A1.5 1.5 0 003.75 21z"
+      />
+    </svg>
+  ),
+  projects: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6 mr-2"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M13 16h-1v-4H8l4-4 4 4h-3v4zm7-4h-3v8H7v-8H4l8-8 8 8z"
+      />
+    </svg>
+  ),
+};
+
 const Navbar = () => {
   const [open, setOpen] = useState(false); // Default state is closed
   const [startX, setStartX] = useState(null); // Store the touch start X-coordinate
@@ -64,21 +132,27 @@ const Navbar = () => {
 
       {/* Sliding Navigation Menu for Mobile */}
       <div
-        className={`fixed top-0 left-0 w-64 bg-[rgb(48,36,72)] transition-transform duration-500 ease-in-out transform rounded-lg ${
+        className={`fixed top-0 left-0 w-54 bg-gradient-to-br from-[rgb(55,64,95)] to-[rgb(31,38,65)] transition-transform duration-500 ease-in-out transform rounded-r-lg shadow-xl ${
           open ? "translate-x-0" : "-translate-x-full"
         } md:hidden z-50`}
         style={{ height: "auto" }} // Dynamic height adjustment
       >
         <nav className="p-6">
-          <ul className="space-y-6 text-white font-bold underline underline-offset-8">
-            {["Home", "Experience", "Skills", "Projects"].map((item, index) => (
+          <ul className="space-y-6 text-white font-bold">
+            {[
+              { name: "Home", icon: icons.home },
+              { name: "Experience", icon: icons.experience },
+              { name: "Skills", icon: icons.skills },
+              { name: "Projects", icon: icons.projects },
+            ].map((item, index) => (
               <li key={index}>
                 <Link
-                  to={`/${item.toLowerCase()}`}
-                  className="block px-6 py-3 text-lg font-semibold hover:bg-[rgb(134,151,195)] hover:text-white transition duration-300 ease-in-out rounded-xl"
+                  to={`/${item.name.toLowerCase()}`}
+                  className="flex items-center px-6 py-3 text-lg font-semibold hover:bg-[rgb(134,151,195)] hover:text-white transition duration-300 ease-in-out rounded-xl"
                   onClick={() => setOpen(false)} // Close the menu on link click
                 >
-                  {item}
+                  {item.icon}
+                  {item.name}
                 </Link>
               </li>
             ))}
@@ -89,13 +163,19 @@ const Navbar = () => {
       {/* Keep the nav for web view untouched */}
       <nav className="p-2 hidden md:flex">
         <ul className="flex md:flex-col text-[rgb(61,82,161)]">
-          {["Home", "Experience", "Skills", "Projects"].map((item, index) => (
+          {[
+            { name: "Home", icon: icons.home },
+            { name: "Experience", icon: icons.experience },
+            { name: "Skills", icon: icons.skills },
+            { name: "Projects", icon: icons.projects },
+          ].map((item, index) => (
             <li key={index}>
               <Link
-                to={`/${item.toLowerCase()}`}
-                className="px-6 py-3 text-lg font-semibold hover:bg-[rgb(134,151,195)] hover:text-white transition duration-300 ease-in-out relative rounded-xl"
+                to={`/${item.name.toLowerCase()}`}
+                className="flex items-center px-6 py-3 text-lg font-semibold hover:bg-[rgb(134,151,195)] hover:text-white transition duration-300 ease-in-out relative rounded-xl"
               >
-                {item}
+                {item.icon}
+                {item.name}
               </Link>
             </li>
           ))}

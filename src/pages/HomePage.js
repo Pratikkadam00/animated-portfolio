@@ -23,7 +23,6 @@ const HomePage = () => {
     <Section bgColor="bg-light-green">
       <div className="w-screen h-screen bg-[rgb(55,64,95)] p-8 flex flex-col justify-center items-center">
         <div className="flex w-full h-full bg-gradient-to-r from-[rgb(232,214,255)] via-[rgb(217,221,232)] to-[rgb(233,237,248)] shadow-2xl rounded-lg justify-center items-center p-8">
-          <Navbar />
           <div className="flex flex-col items-center w-full">
             <motion.div
               className="w-40 h-40 md:w-60 md:h-60 rounded-full border-4 border-white overflow-hidden shadow-xl z-20"

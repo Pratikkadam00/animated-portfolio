@@ -6,23 +6,3 @@
 @tailwind utilities;
 
 
-#hamburger::before,
-#hamburger::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background-color: #e8d6ff;
-  position: absolute;
-  box-shadow: -3px -3px 0px 2.5px rgb(55, 64, 95);
-}
-#hamburger::before {
-  top: 12px;
-  right: -10px;
-  border-top-left-radius: 100%;
-}
-#hamburger::after {
-  bottom: -10px;
-  left: 12px;
-  border-top-left-radius: 100%;
-  box-shadow: -3px -3px 0px 2.5px #37405f;
-}
