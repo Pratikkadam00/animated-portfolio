@@ -5,11 +5,11 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import ExperiencePage from "./pages/ExperiencePage";
 import SkillsPage from "./pages/SkillsPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import Navbar from "./components/Navbar";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -30,6 +30,7 @@ function App() {
   return (
     <Router>
       <div className="w-full min-h-screen overflow-hidden">
+      <Navbar />
         <AnimatedRoutes />
       </div>
     </Router>

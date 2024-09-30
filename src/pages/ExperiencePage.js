@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import Section from "../components/Section";
+import Navbar from "../components/Navbar";
 
 const ExperiencePage = () => {
   const experiences = [
@@ -40,27 +42,52 @@ const ExperiencePage = () => {
     },
   ];
 
+  const [selectedExperience, setSelectedExperience] = useState(null);
+
   return (
-    <Section bgColor="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500">
+    <Section>
       <div className="text-center px-4 md:px-8">
-        <h1 className="text-3xl md:text-5xl text-white mb-8">My Experience</h1>
-        <div className="space-y-8">
-          {experiences.map((experience, index) => (
-            <div
-              key={index}
-              className="bg-white text-gray-800 p-6 rounded-xl shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out"
-            >
-              <h2 className="text-2xl font-semibold mb-2">{experience.role}</h2>
-              <h3 className="text-xl text-gray-600">{experience.company}</h3>
-              <p className="text-gray-600">{experience.duration}</p>
-              <p className="text-gray-600 mb-4">{experience.location}</p>
-              <ul className="list-disc list-inside">
-                {experience.description.map((desc, i) => (
-                  <li key={i}>{desc}</li>
-                ))}
-              </ul>
+        <h1 className="text-3xl md:text-5xl text-gray-800 mb-8">Experience</h1>
+        <div className="flex flex-col md:flex-row">
+      
+          <div className="w-full md:w-1/3">
+            <div className="flex flex-wrap md:justify-start space-x-6 space-y-2 md:space-y-0 md:space-x-0">
+              {experiences.map((experience, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedExperience(experience)}
+                  className="bg-white text-gray-800 py-2 px-4 rounded-lg shadow-lg cursor-pointer hover:bg-gray-100 transition duration-300 ease-in-out"
+                >
+                  {experience.company}
+                </button>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="w-full md:w-2/3 md:pl-6 mt-4 md:mt-0">
+            {selectedExperience && (
+              <div className="bg-white text-gray-800 p-6 rounded-lg shadow-lg transition duration-300 ease-in-out">
+                <h2 className="text-xl font-semibold mb-2">
+                  {selectedExperience.role}
+                </h2>
+                <h3 className="text-lg font-medium text-gray-600 mb-1">
+                  {selectedExperience.company}
+                </h3>
+                <p className="text-gray-500 mb-2">
+                  {selectedExperience.duration}
+                </p>
+                <p className="text-gray-500 mb-4">
+                  {selectedExperience.location}
+                </p>
+                <ul className="list-disc list-inside">
+                  {selectedExperience.description.map((desc, i) => (
+                    <li key={i} className="text-gray-700">
+                      {desc}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </Section>
