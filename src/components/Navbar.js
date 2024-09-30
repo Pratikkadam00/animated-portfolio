@@ -26,10 +26,12 @@ const Navbar = () => {
 
       <nav
         className={`p-2 ${
-          open ? "absolute z-20 bg-red-500" : "hidden"
-        } md:flex  bg-purple-500`}
+          open
+            ? "absolute top-12 "
+            : "hidden"
+        } md:flex`}
       >
-        <ul className="flex flex-col text-[rgb(61,82,161)]">
+        <ul className="flex md:flex-col text-[rgb(61,82,161)]">
           {["Home", "Experience", "Skills", "Projects"].map((item, index) => (
             <li key={index}>
               <Link
