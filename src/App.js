@@ -17,6 +17,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
+        <Route path="/home" element={<HomePage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/skills" element={<SkillsPage />} />
@@ -30,7 +31,7 @@ function App() {
   return (
     <Router>
       <div className="w-full min-h-screen overflow-hidden">
-      <Navbar />
+        <Navbar />
         <AnimatedRoutes />
       </div>
     </Router>

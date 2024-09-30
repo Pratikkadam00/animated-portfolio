@@ -62,12 +62,12 @@ const HomePage = () => {
             </div>
 
             <motion.p
-              className="text-gray-600 text-base md:text-xl mt-6 font-poppins"
+              className="text-gray-600 text-base md:text-xl mt-6 font-poppins font-bold"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1, ease: "easeInOut" }}
             >
-              MERN Stack Developer with over a year of experience
+              MERN Stack Developer
             </motion.p>
 
             <div className="flex justify-center space-x-4 mt-8">
