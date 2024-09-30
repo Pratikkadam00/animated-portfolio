@@ -25,31 +25,38 @@ const ProjectsPage = () => {
   ];
 
   return (
-    <Section bgColor="bg-gray-900">
+    <Section bgColor="bg-gray-600">
       {/* Background with subtle gradient for modern look */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-700 z-0"></div>
+      <div className="absolute  inset-0 bg-gradient-to-b from-gray-900 to-gray-700 z-0 "></div>
 
-      <div className="flex flex-col items-center px-4 md:px-8 pt-20 relative z-10">
+      {/* Main content wrapper */}
+      <div className="flex flex-col items-center justify-center min-h-screen relative z-10 px-4 md:px-8 pt-20">
         {/* Page heading */}
-        <h1 className="text-3xl md:text-5xl text-white mb-8 text-center font-extrabold">
+        <h1 className="text-3xl md:text-5xl text-white mb-12 text-center font-extrabold">
           My Projects
         </h1>
+
         {/* Cards grid layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-screen-xl justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center w-full max-w-screen-lg">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 text-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl w-full max-w-sm mx-auto"
+              className="bg-gray-800 text-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl max-w-sm mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
             >
-              {/* Project image */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-40 object-cover rounded-md mb-4"
-              />
+              {/* Project image with border overlay */}
+              <div className="relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-40 object-cover rounded-md mb-4"
+                />
+                {/* Overlay border */}
+                <div className="absolute inset-0 border-4 border-white rounded-md"></div>
+              </div>
+
               {/* Project title */}
               <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
               {/* Project description */}
