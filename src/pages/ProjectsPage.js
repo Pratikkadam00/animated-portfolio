@@ -2,6 +2,9 @@ import React from "react";
 import Section from "../components/Section";
 import { motion } from "framer-motion"; // Import Framer Motion for animations
 import Navbar from "../components/Navbar"; // Import your Navbar component
+import gama from "../assets/gama.jpg";
+import tracker from "../assets/tracker.jpg";
+import event from "../assets/event.jpg";
 
 const ProjectsPage = () => {
   const projects = [
@@ -11,7 +14,7 @@ const ProjectsPage = () => {
         "A platform to manage podcast projects, secure login, user management, and manage files, YouTube links, and RSS feeds.",
       link: "https://gama-frontend-chi.vercel.app/",
       duration: "06/2023 - 10/2023",
-      image: "path/to/podcast-management-image.jpg",
+      image: gama,
     },
     {
       title: "Covid-19 Tracker",
@@ -19,7 +22,15 @@ const ProjectsPage = () => {
         "Track Covid-19 data in real-time using React and APIs for educational purposes.",
       link: "https://pratikkadam00.github.io/Covid19-tracker/",
       duration: "01/2022 - 03/2022",
-      image: "path/to/covid-tracker-image.jpg",
+      image: tracker,
+    },
+    {
+      title: "Event Management",
+      description:
+        "The Event Management System will allow users to manage events, RSVP, send reminders, and handle attendee management.",
+      link: "https://hackathon-frontend-fawn.vercel.app/",
+      duration: "09/2024 - 09/2024",
+      image: event,
     },
     // Add more projects as needed
   ];
@@ -27,7 +38,7 @@ const ProjectsPage = () => {
   return (
     <Section bgColor="bg-gray-600">
       {/* Background with subtle gradient for modern look */}
-      <div className="absolute  inset-0 bg-gradient-to-b from-gray-900 to-gray-700 z-0 "></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-700 z-0 "></div>
 
       {/* Main content wrapper */}
       <div className="flex flex-col items-center justify-center min-h-screen relative z-10 px-4 md:px-8 pt-20">
@@ -83,6 +94,7 @@ const ProjectsPage = () => {
                     fillRule="evenodd"
                     d="M10 3a1 1 0 011 1v9.586l4.293-4.293a1 1 0 011.414 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 011.414-1.414L9 13.586V4a1 1 0 011-1z"
                     clipRule="evenodd"
+                    transform="rotate(-135 10 10)" // Rotating the arrow to point top-right
                   />
                 </svg>
               </a>

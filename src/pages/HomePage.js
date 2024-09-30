@@ -69,9 +69,9 @@ const HomePage = () => {
               MERN Stack Developer
             </motion.p>
             <div className="flex justify-center space-x-3 mt-5 py-3">
-            <DownloadButton />
+              <DownloadButton />
               <motion.a
-                href="https://github.com/yourusername"
+                href="https://github.com/Pratikkadam00"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-800 hover:scale-125 transition-transform duration-500"
@@ -88,7 +88,7 @@ const HomePage = () => {
               </motion.a>
 
               <motion.a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/pratikkadam00/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-800 hover:scale-125 transition-transform duration-500"

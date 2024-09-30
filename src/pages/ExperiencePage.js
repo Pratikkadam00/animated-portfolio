@@ -55,7 +55,7 @@ const ExperiencePage = () => {
   };
 
   return (
-    <Section>
+    <Section bgColor="bg-black">
       <div className="flex flex-col h-screen w-full bg-black text-green-400 p-6 md:p-10 lg:p-20">
         <h1 className="text-4xl md:text-5xl font-bold mb-10 text-center">
           Experience
