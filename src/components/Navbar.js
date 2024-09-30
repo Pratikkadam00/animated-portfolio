@@ -64,13 +64,13 @@ const Navbar = () => {
 
       {/* Sliding Navigation Menu for Mobile */}
       <div
-        className={`fixed top-0 left-0 w-64 bg-[rgb(55,64,95)] transition-transform duration-500 ease-in-out transform rounded-2xl ${
+        className={`fixed top-0 left-0 w-64 bg-[rgb(48,36,72)] transition-transform duration-500 ease-in-out transform rounded-lg ${
           open ? "translate-x-0" : "-translate-x-full"
         } md:hidden z-50`}
         style={{ height: "auto" }} // Dynamic height adjustment
       >
         <nav className="p-6">
-          <ul className="space-y-6 text-white">
+          <ul className="space-y-6 text-white font-bold underline underline-offset-8">
             {["Home", "Experience", "Skills", "Projects"].map((item, index) => (
               <li key={index}>
                 <Link
